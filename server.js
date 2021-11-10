@@ -10,8 +10,8 @@ app.use('/api/tasks', taskRouter)
 const start = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URL)
-    app.listen(process.env.PORT || 3000, () => {
-      console.log('Server Started.')
+    const listener = app.listen(process.env.PORT || 3000, () => {
+      console.log('Server Started on port ' + listener.address().port)
     })
   } catch (err) {
     console.log(err)
