@@ -8,7 +8,7 @@ const TaskSchema = new mongoose.Schema({
     maxlength: [30, 'Name can not be more than 30 characters.'],
   },
   completed: { type: Boolean, required: true, default: false },
-  data: { type: Date, required: true, default: Date.now },
+  date: { type: Date, required: true, default: Date.now },
 })
 
 module.exports = mongoose.model('Task', TaskSchema)
